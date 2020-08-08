@@ -8,8 +8,8 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes: Quote[] = [
-    new Quote(1, 'I am a slow walker but i never walk backwards.','Written by Langat', new Date(2020, 3,14)),
-    new Quote(2, 'Make a hey when the sun shines.', 'Written by Lekiko', new Date(2020, 1,24)),
+    new Quote(1, 'I am a slow walker but i never walk backwards.','Written by Langat', new Date(2014, 11,14)),
+    new Quote(2, 'Make a hey when the sun shines.', 'Written by Lekiko', new Date(2019, 1,24)),
   ];
   toggleDetails(index){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
