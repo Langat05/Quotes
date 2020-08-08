@@ -1,13 +1,17 @@
-<div>
-    <h1>Favourite Quotes</h1>
+<div class="container">
+    <h1 class="jumbotron" style="text-align: center;">Favourite Quotes</h1>
     <hr>
-    <ol>
-      <div *ngFor='let quote of quotes; let i = index'>
-      <li>{{quote.name}} on {{quote.completeDate|date|uppercase}}</li>
-      <button (click) = 'toggleDetails(i)'>Show Details</button>
-      
-      <app-quote-detail *ngIf='quote.showDescription' [quote] = 'quote' (isComplete) = 'deleteQuote($event, i)'></app-quote-detail>
-    </div>
-     
-    </ol>
+    <div class="row">
+        <div class="col-md-6">
+          <ol>
+             <div *ngFor='let quote of quotes; let i = index'>
+                 <li>{{quote.name}} on {{quote.completeDate|date|uppercase}}</li>
+                   <button (click) = 'toggleDetails(i)' class="btn btn-primary">Show Details</button>
+                     <div *ngIf='quote.showDescription'>
+                      <app-quote-detail *ngIf='quote.showDescription' [quote] = 'quote' (isComplete) = 'deleteQuote($event, i)'></app-quote-detail>
+                     </div>
+             </div>
+           </ol>
+        </div> 
+    </div> 
   </div>
