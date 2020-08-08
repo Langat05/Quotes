@@ -8,9 +8,12 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes: Quote[] = [
-    {id:1, name: 'I am a slow walker but i never walk backwards.',description: 'Written by Langat'},
-    {id:2, name: 'Make a hey when the sun shines.', description:'Written by Lekiko'},
+    new Quote(1, 'I am a slow walker but i never walk backwards.','Written by Langat'),
+    new Quote(2, 'Make a hey when the sun shines.', 'Written by Lekiko'),
   ];
+  toggleDetails(index){
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  }
 
   constructor() { }
 
