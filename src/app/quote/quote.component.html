@@ -1,20 +1,19 @@
 <div class="container">
-    <h1 class="jumbotron" style="text-align: center;">Favourite Quotes</h1>
-    <hr>
-    <div class="row">
-        <div class="col-md-6">
-          <ol>
-             <div *ngFor='let quote of quotes; let i = index'>
-                 <li>{{quote.name}} on {{quote.completeDate|date|uppercase}}</li>
-                   <button (click) = 'toggleDetails(i)' class="btn btn-primary">Show Details</button>
-                     <div *ngIf='quote.showDescription'>
-                      <app-quote-detail *ngIf='quote.showDescription' [quote] = 'quote' (isComplete) = 'deleteQuote($event, i)'></app-quote-detail>
-                     </div>
-             </div>
-           </ol>
-        </div> 
-        <div class="col-md-6">
-            <app-quote-form></app-quote-form>
+  <h1 class="jumbotron" style="text-align: center;">Favourite Quotes</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <ol>
+        <div *ngFor='let quote of quotes; let i = index'>
+          <li>{{quote.name}}</li>
+          <button (click)='toggleDetails(i)' class="btn btn-primary">Show Details</button>
+          <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete)='deleteQuote($event, i)'>
+          </app-quote-detail>
         </div>
-    </div> 
+      </ol>
+    </div>
+    <div class="col-md-6">
+      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+    </div>
   </div>
+</div>
