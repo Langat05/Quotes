@@ -1,19 +1,53 @@
-<div class="container">
-  <h1 class="jumbotron" style="text-align: center;">Favourite Quotes</h1>
+<div class="container mybody">
   <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <ol>
-        <div *ngFor='let quote of quotes; let i = index'>
-          <li>{{quote.name}}</li>
-          <button (click)='toggleDetails(i)' class="btn btn-primary">Show Details</button>
-          <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete)='deleteQuote($event, i)'>
-          </app-quote-detail>
+  <div class="header">
+    <h1>Favourite Quotes</h1>
+    <br><br>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <p *ngIf='quotes.length > 0'><button (click)='findMostLiked()' class="btn btn-outline-info">Check the
+              Best quote</button>
+          </p>
+          <div *ngIf='bestQuote && quotes.length > 0' appHighlightBestQuotes>
+            <div>
+              <p>{{bestQuote}}</p>
+              <p>{{highestCounter}}</p>
+              <p>{{dislikeCounter}}</p>
+            </div>
+          </div>
+          <div *ngFor='let quote of quotes;let i = index'>
+            <div class="card p-3 mb-3 mycard">
+              <div>
+                <div class="row">
+                  <div>
+                    <a href="#" onclick="event.preventDefault()" (click)="countClick(quote)">
+                      <i class="fa fa-thumbs-up pr-1  ml-4 like" ng-click="count = count + 1" ng-init="count=0"
+                        style="color:blue;"></i>
+                    </a>
+                    <span class="m-4">{{ quote.clickCounter }}</span>
+                  </div>
+                  <div>
+                    <a href="#" onclick="event.preventDefault()" (click)="countDislike(quote)">
+                      <i class="fa fa-thumbs-down pr-1 dislike" ng-click="count = count + 1" ng-init="count=0"
+                        style="color:red;"></i>
+                    </a>
+                    <span class="m-4">{{ quote.dislikeCounter }}</span>
+                  </div>
+                </div>
+                
+                <div *ngFor='let quote of quotes; let i = index'>
+                  <li>{{quote.name}}</li>
+                  <button (click)='toggleDetails(i)' class="btn btn-primary">Show Details</button>
+                  <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete)='deleteQuote($event, i)'>
+                  </app-quote-detail>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+          </div>
         </div>
-      </ol>
+      </div>
     </div>
-    <div class="col-md-6">
-      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-    </div>
-  </div>
-</div>

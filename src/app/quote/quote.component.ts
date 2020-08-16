@@ -33,10 +33,44 @@ export class QuoteComponent implements OnInit {
     quote.completeDate = new Date(quote.completeDate)
     this.quotes.push(quote)
   }
+  clickCounter = 0;
+  dislikeCounter = 0;
+  highestCounter=0;
+  bestQuote:string;
+
+  findMostLiked(){
+    this.highestCounter=0;
+    for(let i=0 ;i < this.quotes.length;i++){
+      if(this.quotes[i].clickCounter >this.highestCounter){
+        this.highestCounter=this.quotes[i].clickCounter;
+        this.dislikeCounter=this.quotes[i].dislikeCounter;
+        this.bestQuote=this.quotes[i].name;
+      }
+
+    }
+  }
+  countClick(quote) {
+    quote.clickCounter = quote.clickCounter +1;
+
+  }
+  countDislike(quote) {
+    quote.dislikeCounter = quote.dislikeCounter +1;
+  }
 
   constructor() { }
+
 
   ngOnInit() {
   }
 
 }
+
+ 
+
+ 
+  
+
+  
+  
+  
+  

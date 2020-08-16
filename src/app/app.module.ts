@@ -7,14 +7,15 @@ import { QuoteComponent } from './quote/quote.component';
 import { QuoteDetailComponent } from './quote-detail/quote-detail.component';
 import { DateCountPipe } from './date-count.pipe';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
-
+import { HighlightBestQuotesDirective } from './highlight-best-quotes.directive';
 @NgModule({
   declarations: [
     AppComponent,
     QuoteComponent,
     QuoteDetailComponent,
     DateCountPipe,
-    QuoteFormComponent
+    QuoteFormComponent,
+    HighlightBestQuotesDirective
   ],
   imports: [
     BrowserModule,

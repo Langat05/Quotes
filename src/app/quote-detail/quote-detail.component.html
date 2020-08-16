@@ -1,3 +1,6 @@
+<p>This quote was written by {{quote.description}} on {{quote.completeDate|date}}, {{quote.completeDate|dateCount}} days
+    ago.</p>
 
-<p>This quote was written by {{quote.description}} on {{quote.completeDate|date}}, {{quote.completeDate|dateCount}} days ago.</p>
-<button (click)='quoteDelete(true)' class="btn btn-danger">Delete Quote</button>
+<div>
+    <button (click)='quoteDelete(true)' class="btn btn-outline-danger"><i class="fa fa-trash-o"></i></button>
+</div>
