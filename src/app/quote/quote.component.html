@@ -23,14 +23,14 @@
               <h6>{{quote.name}}</h6>
               <div class="row">
                 <div>
-                  <a href="#" onclick="event.preventDefault()" (click)="countClick(quote)">Like
+                  <a href="#" onclick="event.preventDefault()" (click)="countClick(quote)">
                     <i class="fa fa-thumbs-up pr-1  ml-4 like" ng-click="count = count + 1" ng-init="count=0"
                       style="color:blue;"></i>
                   </a>
                   <span class="m-4">{{ quote.clickCounter }}</span>
                 </div>
                 <div>
-                  <a href="#" onclick="event.preventDefault()" (click)="countDislike(quote)">Dislike
+                  <a href="#" onclick="event.preventDefault()" (click)="countDislike(quote)">
                     <i class="fa fa-thumbs-down pr-1 dislike" ng-click="count = count + 1" ng-init="count=0"
                       style="color:red;"></i>
                   </a>

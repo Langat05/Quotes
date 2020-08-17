@@ -7,7 +7,7 @@ export class HighlightBestQuotesDirective {
 
   constructor(private elem:ElementRef){
 
-    this.elem.nativeElement.style.color="blue"
+    this.elem.nativeElement.style.color="green"
 
     
    }
