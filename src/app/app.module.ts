@@ -22,7 +22,7 @@ import { HighlightBestQuotesDirective } from './highlight-best-quotes.directive'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

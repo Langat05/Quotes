@@ -8,8 +8,7 @@ import { Quote } from '../quote'
 export class QuoteComponent implements OnInit {
   quotes: Quote[] = [
     new Quote(1, 'Do not withhold good from those to whom it is due, when it is in your power to do it.', 'Paul, proverbs 3:27', 0, 0, new Date(1014, 11, 14)),
-    new Quote(2, 'Nobody can stop reggae.', 'Lucky Dube',0, 0, new Date(2004, 6, 19)),
-
+    new Quote(2, 'Nobody can stop reggae.', 'Lucky Dube', 0, 0, new Date(2004, 6, 19)),
   ];
 
 
@@ -42,7 +41,7 @@ export class QuoteComponent implements OnInit {
 
   deleteQuote(isComplete, index) {
     if (isComplete) {
-      let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}?`)
+      let toDelete = confirm(`Are you sure you want to delete this quote?`)
 
       if (toDelete) {
         this.quotes.splice(index, 1)

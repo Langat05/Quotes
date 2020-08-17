@@ -1,4 +1,5 @@
-<br><div class="container mybody" style="background-color: lightslategray;padding-top: 50px;">
+<br>
+<div class="container mybody" style="background-color: rgba(224, 153, 197, 0.884);padding-top: 30px;">
   <div class="mytop">
     <h1 class="text-center" style="font-size:3rem"><span><strong>Quotes</strong></span></h1>
   </div>
@@ -7,12 +8,13 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-8">
-        <p *ngIf='quotes.length > 0'><button (click)='findMostLiked()' class="btn btn-outline-info" style="color: rgb(255, 248, 255);">
-            Best quote</button>
+        <p *ngIf='quotes.length > 0'><button (click)='findMostLiked()' class="btn btn-outline-danger"
+            style="color: rgb(0, 0, 0);">
+            <b>Show best quote</b></button>
         </p>
         <div *ngIf='bestQuote && quotes.length > 0' appHighlightBestQuotes>
-          <div style="color: white;">
-            <p>{{bestQuote}}</p>
+          <div style="color: rgb(64, 46, 105);">
+            <p><b>{{bestQuote | uppercase}}</b></p>
             <p>{{highestCounter}} likes</p>
             <p>{{dislikeCounter}} dislikes</p>
           </div>
@@ -21,8 +23,8 @@
           <div class="card p-3 mb-3 mycard">
             <div>
               <ul>
-              <li>{{quote.name}}</li>
-            </ul>
+                <li>{{quote.name}}</li>
+              </ul>
               <div class="row">
                 <div>
                   <a href="#" onclick="event.preventDefault()" (click)="countClick(quote)">

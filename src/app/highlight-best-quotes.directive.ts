@@ -5,11 +5,11 @@ import { Directive, ElementRef } from '@angular/core';
 })
 export class HighlightBestQuotesDirective {
 
-  constructor(private elem:ElementRef){
+  constructor(private elem: ElementRef) {
 
-    this.elem.nativeElement.style.color="green"
+    this.elem.nativeElement.style.color = "red"
 
-    
-   }
+
+  }
 
 }
