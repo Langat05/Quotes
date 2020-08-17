@@ -7,8 +7,10 @@ import { Quote } from '../quote'
 })
 export class QuoteComponent implements OnInit {
   quotes: Quote[] = [
-    new Quote(1, 'I am a slow walker but i never walk backwards', 'Langat', 0, 0, new Date(2014, 11, 14)),
-    new Quote(2, 'Make a hey when the sun shines', 'Lekiko',0, 0, new Date(2019, 1, 24)),
+    new Quote(1, 'Do not withhold good from those to whomit is due, when it is in your power to do it.', 'Paul, proverbs 3:27', 0, 0, new Date(1014, 11, 14)),
+    new Quote(2, 'Honesty is the best policy.', 'Serbai',0, 0, new Date(2019, 1, 24)),
+    new Quote(2, 'Nobody can stop reggae.', 'Lucky Dube',0, 0, new Date(2004, 6, 19)),
+
   ];
 
 

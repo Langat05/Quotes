@@ -1,22 +1,20 @@
 <div class="container mybody">
   <div class="mytop">
-    <h1 class="text-center" style="font-size:3rem"><span><strong>Motivational Quotes</strong></span></h1>
-    <p class="text-center" style="font-size:2rem; font-style:italic"><b>Life is too short, get inspired now! </b></p>
-    <br><br><br>
+    <h1 class="text-center" style="font-size:3rem"><span><strong>Quotes</strong></span></h1>
   </div>
   <hr>
   <br><br>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <p *ngIf='quotes.length > 0'><button (click)='findMostLiked()' class="btn btn-outline-info">Check the
+        <p *ngIf='quotes.length > 0'><button (click)='findMostLiked()' class="btn btn-outline-info">
             Best quote</button>
         </p>
         <div *ngIf='bestQuote && quotes.length > 0' appHighlightBestQuotes>
           <div>
             <p>{{bestQuote}}</p>
-            <p>{{highestCounter}}</p>
-            <p>{{dislikeCounter}}</p>
+            <p>{{highestCounter}} likes</p>
+            <p>{{dislikeCounter}} dislikes</p>
           </div>
         </div>
         <div *ngFor='let quote of quotes;let i = index'>
