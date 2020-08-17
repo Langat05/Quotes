@@ -1,4 +1,4 @@
-<div class="container mybody">
+<br><div class="container mybody" style="background-color: lightslategray;padding-top: 50px;">
   <div class="mytop">
     <h1 class="text-center" style="font-size:3rem"><span><strong>Quotes</strong></span></h1>
   </div>
@@ -6,12 +6,12 @@
   <br><br>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-12">
-        <p *ngIf='quotes.length > 0'><button (click)='findMostLiked()' class="btn btn-outline-info">
+      <div class="col-md-8">
+        <p *ngIf='quotes.length > 0'><button (click)='findMostLiked()' class="btn btn-outline-info" style="color: rgb(255, 248, 255);">
             Best quote</button>
         </p>
         <div *ngIf='bestQuote && quotes.length > 0' appHighlightBestQuotes>
-          <div>
+          <div style="color: white;">
             <p>{{bestQuote}}</p>
             <p>{{highestCounter}} likes</p>
             <p>{{dislikeCounter}} dislikes</p>
@@ -20,7 +20,9 @@
         <div *ngFor='let quote of quotes;let i = index'>
           <div class="card p-3 mb-3 mycard">
             <div>
-              <h6>{{quote.name}}</h6>
+              <ul>
+              <li>{{quote.name}}</li>
+            </ul>
               <div class="row">
                 <div>
                   <a href="#" onclick="event.preventDefault()" (click)="countClick(quote)">
