@@ -10,39 +10,31 @@
       <div class="col-md-8">
         <p *ngIf='quotes.length > 0'><button (click)='findMostLiked()' class="btn btn-outline-danger"
             style="color: rgb(0, 0, 0);">
-            <b>Show best quote</b></button>
+            <b>Best quote</b></button>
         </p>
-        <div *ngIf='bestQuote && quotes.length > 0' appHighlightBestQuotes>
-          <div style="color: rgb(64, 46, 105);">
+        <div *ngIf='bestQuote && quotes.length > 0'>
+          <div style="color: rgb(230, 0, 0);" appHighlightBestQuotes>
             <p><b>{{bestQuote | uppercase}}</b></p>
-            <p>{{highestCounter}} likes</p>
-            <p>{{dislikeCounter}} dislikes</p>
+            <p>It has {{highestCounter}} likes.</p>
           </div>
         </div>
         <div *ngFor='let quote of quotes;let i = index'>
           <div class="card p-3 mb-3 mycard">
             <div>
-              <ul>
-                <li>{{quote.name}}</li>
-              </ul>
-              <div class="row">
-                <div>
-                  <a href="#" onclick="event.preventDefault()" (click)="countClick(quote)">
-                    <i class="fa fa-thumbs-up pr-1  ml-4 like" ng-click="count = count + 1" ng-init="count=0"
-                      style="color:blue;"></i>
-                  </a>
-                  <span class="m-4">{{ quote.clickCounter }}</span>
-                </div>
-                <div>
-                  <a href="#" onclick="event.preventDefault()" (click)="countDislike(quote)">
-                    <i class="fa fa-thumbs-down pr-1 dislike" ng-click="count = count + 1" ng-init="count=0"
-                      style="color:red;"></i>
-                  </a>
-                  <span class="m-4">{{ quote.dislikeCounter }}</span>
-                </div>
+              <div appHighlightBestQuotes>{{quote.name}}
+              </div>
+              <div>
+                <a href="#" onclick="event.preventDefault()" (click)="countClick(quote)">
+                  <i class="fa fa-thumbs-up pr-1  ml-4 like" ng-click="count = count + 1" ng-init="count=0"
+                    style="color:blue;"></i>
+                </a>{{ quote.clickCounter }}
+                <a href="#" onclick="event.preventDefault()" (click)="countDislike(quote)">
+                  <i class="fa fa-thumbs-down pr-1 dislike" ng-click="count = count + 1" ng-init="count=0"
+                    style="color:red;"></i>
+                </a>{{ quote.dislikeCounter }}
               </div>
               &nbsp;
-              <button (click)='toggleDetails(i)' class="btn btn-primary">Show Details</button>
+              <button (click)='toggleDetails(i)' class="btn btn-primary">Details</button>
             </div>
             <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete)='deleteQuote($event,i)'>
             </app-quote-detail>

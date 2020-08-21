@@ -1,13 +1,17 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appHighlightBestQuotes]'
 })
 export class HighlightBestQuotesDirective {
 
-  constructor(private elem: ElementRef) {
+  constructor(private elem: ElementRef) {}
+  @HostListener("click") findMostLiked(){
+    this.color("highlight")
+  }
 
-    this.elem.nativeElement.style.color = "red"
+  private color(action:string){
+    this.elem.nativeElement.style.color = action;
 
 
   }
