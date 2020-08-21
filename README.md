@@ -4,10 +4,10 @@
 ## Langat K Justus
 ## DESCRIPTION
 
-this app functions in a way that it shows how many likes and dislikes a quote has depending on the users. It also shows time when the quote was posted and the author. However, the user can add his or her own quote to the app.
+This app functions in a way that it shows how many likes and dislikes a quote has depending on the users. It also shows time when the quote was posted and the author. However, the user can add his or her own quote to the app and also check on the best quote.
 
  ## Screenshot
-    
+   ![screenshot](https://user-images.githubusercontent.com/57387935/90890303-61ab5380-e3c2-11ea-9c03-737bf2da7625.png) 
 
 # Set-up Installation
 
